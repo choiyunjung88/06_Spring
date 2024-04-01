@@ -1,0 +1,3 @@
+# 한 줄 주석
+spring.application.name=demoProject1
+server.port=80
