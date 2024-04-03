@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타임리프 예제5</title>
+    <style>
+        .reda
+    </style>
+</head>
+<body>
+    <h3>inline = "javascript" 속성</h3>
+    <h3 id="message"></h3>
+    <h3 id="num1"></h3>
+    <script th:inlne="javascript">
+        const message = /*[[${message}]]*/ "message 값"
+        
+    </script>
+    
+    <!-- html 파일 독립 실행 시 js 내부
+        타임리프 코드 오류를 발생하지 않게됨
+    -->
+</body>
+</html>

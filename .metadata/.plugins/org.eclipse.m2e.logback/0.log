@@ -64,3 +64,6 @@
 2024-04-02 15:53:41,618 [Worker-122: Launching Executing clean in C__workspace_06_Spring_demoProject2] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\tools\spring-tool-suite-4-4.22.0.RELEASE-e4.31.0-win32.win32.x86_64.self-extracting\sts-4.22.0.RELEASE\plugins\com.google.guava.failureaccess_1.0.2.jar
 2024-04-02 15:53:41,620 [Worker-122: Launching Executing clean in C__workspace_06_Spring_demoProject2] INFO  o.e.m.i.launch.MavenLaunchDelegate - Run build in "C:\workspace\06_Spring\demoProject2":
 2024-04-02 15:53:41,620 [Worker-122: Launching Executing clean in C__workspace_06_Spring_demoProject2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -Dstyle.color=always clean
+2024-04-03 09:06:37,049 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2024-04-03 12:50:46,845 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-04-03 14:22:25,138 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
