@@ -5,16 +5,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-@Setter
-@Getter
 public class Todo {
-
-	private int todoNo;        //할일번호
-	private String todoTitle;  //할일제목
-	private String todoContent;//할일내용
-	private String complete;   //할일완료여부
-	private String regDate;    //할일등록일(String으로 변환)
+	private int todoNo;          // 할 일 번호
+	private String todoTitle;    // 할 일 제목
+	private String todoContent;  // 할 일 내용
+	private String complete;     // 할 일 완료 여부 ("Y" / "N")
+	private String regDate;      // 할 일 등록일 (String으로 변환)
 }

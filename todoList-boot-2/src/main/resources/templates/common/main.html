@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <form method="post">
+        <h4>할일 추가</h4>
+        <div>
+            제목 : <input type="text" name="todoTitle">
+        </div>
+        <div>
+            <textarea name="todoContent" cols="50" rows="5" placeholder="상세 내용"></textarea>
+
+        </div>
+        <button>추가하기</button>
+    </form>
+    <table border="1">
+        <thead>
+            <th>번호</th>
+            <th>할 일 제목</th>
+            <th>완료 여부</th>
+            <th>등록 날짜</th>
+        </thead>
+        <tbody>
+            <tr >
+
+                <td >할 일 번호</td>
+                <td>
+                    <a >할 일 제목</a>
+                </td>
+                <td >완료여부</td>
+                <td >등록일</td>
+            </tr>
+        </tbody>
+            <h1>Todo List</h1>
+            <hr>
+            <h3><a href="/ajax/main">TodoList - Ajax 버전</a></h3>
+    </table>
+    <div id="popupLayer" class="popup-hidden">
+        <div class="popup-row">
+          번호 : <span id="popupTodoNo"></span>
+          |
+          제목 : <span id="popupTodoTitle"></span>
+          <span id="popupClose">&times;</span>
+        </div>
+        <div class="popup-row">
+          완료 여부 : <span id="popupComplete"></span>
+          |
+          등록일 : <span id="popupRegDate"></span>
+        </div>
+        <div class="popup-row">
+          [내용]
+          <div id="popupTodoContent"></div>
+        </div>
+        <div class="btn-container">
+          <button id="changeComplete">완료 여부 변경</button>
+          <button id="updateView">수정</button>
+          <button id="deleteBtn">삭제</button>
+        </div>
+      </div>
+</body>
+</html>
