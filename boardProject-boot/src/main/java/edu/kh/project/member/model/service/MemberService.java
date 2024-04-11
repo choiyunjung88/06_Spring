@@ -9,4 +9,5 @@ public interface MemberService {
 
 	Member login(Member inputMember);
 
+	int checkEmail(String memberEmail);
 }

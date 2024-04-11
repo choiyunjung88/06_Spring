@@ -66,6 +66,13 @@ public class MemberServiceImpl implements MemberService {
 		// memberPw: pass01!
 		return loginMember;
 	}
+
+
+	@Override
+	public int checkEmail(String memberEmail) {
+		// TODO Auto-generated method stub
+		return mapper.checkEmail(memberEmail);
+	}
 	
 	
 	

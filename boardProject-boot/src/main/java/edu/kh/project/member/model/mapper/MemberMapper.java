@@ -13,4 +13,6 @@ public interface MemberMapper {
 	 * @return loginMember
 	 */
 	Member login(String memberEmail);
+	
+	int checkEmail(String memberEmail);
 }
