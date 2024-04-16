@@ -1,10 +1,14 @@
 package edu.kh.project.member.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -156,13 +160,38 @@ public class MemberController {
 	}
 	
 	
+	@GetMapping("quickLogin")
+	public String quickLogin(
+			@RequestParam("memberEmail") String memberEmail,
+			Model model,
+			RedirectAttributes ra
+			) {
+		Member loginMember = service.quickLogin(memberEmail);
+		if(loginMember == null) {
+			ra.addFlashAttribute("message", "해당 이메일이 존재하지 않습니다.");
+			
+		}else {
+			model.addAttribute("loginMember", loginMember);
+		}
+		return "redirect:/";
+	}
 	
-	
-	
-	
-	
-	
-	
+	@ResponseBody
+	@GetMapping("selectMemberList")
+	public List<Member> selectMemberList(){
+		//(java)List
+		//(Spring) HttpMessageConberter가 JSON Array(문자열)로 변경
+		// -> (JS) response => response.json() -> JS 객체 배열
+		
+		return service.selectMemberList();
+		
+	}
+
+	@ResponseBody
+	@PutMapping("restPw")
+	public int restPw(@RequestBody int inputNo) {
+		return service.restPw(inputNo);
+	}
 	
 	
 	

@@ -37,7 +37,8 @@
             <label>닉네임</label>
 
             <input type="text" name="memberNickname" 
-              maxlength="10" id="memberNickname">
+              maxlength="10" id="memberNickname"
+              th:value="${session.loginMember.memberNickname}">
           </div>
 
 
