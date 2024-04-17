@@ -13,5 +13,4 @@ public interface EmailMapper {
 
 	int checkAuthKey(Map<String, Object> map);
 
-	
 }

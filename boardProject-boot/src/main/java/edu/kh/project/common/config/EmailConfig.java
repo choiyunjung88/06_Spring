@@ -13,15 +13,18 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 @PropertySource("classpath:/config.properties")
 public class EmailConfig {
 	
+	// @Value : properties에 작성된 내용 중 키가 일치하는 값을 얻어와 필드에 대입
 	@Value("${spring.mail.username}")
-    private String userName;
-    
+	private String userName;
+	
 	@Value("${spring.mail.password}")
-    private String password; 
-    
+	private String password;
+	
 	@Bean
 	public JavaMailSender javaMailSender() {
+		
 		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+		
 		Properties prop = new Properties();
 		prop.setProperty("mail.transport.protocol", "smtp");
 		prop.setProperty("mail.smtp.auth", "true");
@@ -37,6 +40,9 @@ public class EmailConfig {
 		mailSender.setPort(587);
 		mailSender.setDefaultEncoding("UTF-8");
 		mailSender.setJavaMailProperties(prop);
+		
 		return mailSender;
+		
 	}
+	
 }

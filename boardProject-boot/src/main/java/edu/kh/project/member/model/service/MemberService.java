@@ -4,23 +4,27 @@ import java.util.List;
 
 import edu.kh.project.member.model.dto.Member;
 
-/**
- * 
- */
 public interface MemberService {
 
-
+	/** 로그인 서비스
+	 * @param inputMember
+	 * @return loginMember
+	 */
 	Member login(Member inputMember);
 
+	/** 이메일 중복검사 서비스
+	 * @param memberEmail
+	 * @return
+	 */
 	int checkEmail(String memberEmail);
-	
-	/**닉네임 중복 검사
+
+	/** 닉네임 중복 검사
 	 * @param memberNickname
 	 * @return count
 	 */
 	int checkNickname(String memberNickname);
 
-	/** 회원가입 서비스
+	/** 회원 가입 서비스
 	 * @param inputMember
 	 * @param memberAddress
 	 * @return result
@@ -33,7 +37,15 @@ public interface MemberService {
 	 */
 	Member quickLogin(String memberEmail);
 
+	/** 회원 목록 조회
+	 * @return memberList
+	 */
 	List<Member> selectMemberList();
 
-	int restPw(int inputNo);
-};
+	/** 비밀번호 초기화
+	 * @param inputNo
+	 * @return
+	 */
+	int resetPw(int inputNo);
+
+}
