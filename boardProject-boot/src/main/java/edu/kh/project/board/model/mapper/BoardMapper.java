@@ -19,4 +19,10 @@ public interface BoardMapper {
 
 	int getListCount(int boardCode);
 	List<Board> selectBoardList(int board, RowBounds rowBounds);
+
+	/** 게시글 상세 조회
+	 * @param map
+	 * @return
+	 */
+	Board selectOne(Map<String, Integer> map);
 }
