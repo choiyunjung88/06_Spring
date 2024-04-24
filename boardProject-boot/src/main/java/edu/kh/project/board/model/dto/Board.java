@@ -46,4 +46,6 @@ public class Board {
 	
 	// 특정 게시글에 작성된 댓글 목록
 	private List<Comment> commentList;
+	// 좋아요 여부 0/1
+	private int likeCheck;
 }
