@@ -46,3 +46,24 @@ document.querySelector("#boardLike").addEventListener("click", e => {
         e.target.nextElementSibling.innerText = count;
     })
 })
+
+// -------------------게시글 수정 버튼--------------------------
+const updateBtn = document.querySelector("#updateBtn");
+
+if(updateBtn != null) { // 수정 버튼 존재 시
+
+    updateBtn.addEventListener("click", () => {
+
+        // GET 방식
+        // 현재 : /board/1/2001?cp=1
+        // 목표 : /editBoard/1/2001/update
+        // 공통 주소 부분이 다름, /update 붙어야함 cp가 있으면 쿼리 스트링 붙여야함
+        location.href = location.pathname.replace('board', 'editBoard') 
+        // location.pathname : 현재 경로 이름
+        // board를 editboard로 바꿈
+                        + "/update"
+                        + location.search; 
+
+    });
+
+}
