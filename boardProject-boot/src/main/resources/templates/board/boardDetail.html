@@ -151,8 +151,12 @@
         // 현재 게시글 좋아요 여부를 전역변수로 저장
         let likeCheck = /*[[${board.likeCheck}]]*/ "좋아요 여부";
 
+        const userDefaultIamge = /*[[#{user.default.image}]]*/ "기본이미지";
+        /* 대괄호두개 자바스크립트에서만 쓰는거 아님html에서도 쓸 수 있음
+             : th:text를 다른 표기법으로 쓰는 것
+        */
     </script>
     <script src="/js/board/boardDetail.js"></script>
-    
+    <script src="/js/board/comment.js"></script>
 </body>
 </html>
