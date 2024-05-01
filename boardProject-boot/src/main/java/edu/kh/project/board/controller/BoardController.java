@@ -51,12 +51,33 @@ public class BoardController {
 	@GetMapping("{boardCode:[0-9]+}")
 	public String selectBoardList(@PathVariable("boardCode") int boardCode,
 			@RequestParam(value="cp", required = false, defaultValue = "1") int cp,
-			Model model
+			Model model,
+			@RequestParam Map<String, Object> paramMap
 			) {
 		log.debug("boardCode : " + boardCode);
 		
 		// 조회 서비스 호출 후 결과 반환
-		Map<String, Object> map = service.selectBoardList(boardCode, cp);
+		Map<String, Object> map = null;
+		
+		// 검색이 아닌 경우 --> paramMap은 {}
+		if(paramMap.get("key") == null) {
+			// 게시글 목록 조회 메서드 호출
+			map = service.searchList(boardCode, cp);
+			
+		} else { // 검색인 경우 -> paramMap은 {key=t, query=검색어}
+			
+			// boardCode를 paramMap에 추가
+			paramMap.put("boardCode", boardCode);
+			// paramMap은 {key=t, query=rjatordj, boardCode=
+
+			
+			// 검색 서비스 호출
+			
+		}
+				
+				
+				
+				
 		
 		model.addAttribute("pagination", map.get("pagination"));
 		model.addAttribute("boardList", map.get("boardList"));

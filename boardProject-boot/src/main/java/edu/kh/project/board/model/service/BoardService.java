@@ -30,4 +30,6 @@ public interface BoardService {
 
 	int updateReadCount(int boardNo);
 
+	Map<String, Object> searchList(int boardCode, int cp);
+
 }
