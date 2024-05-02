@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="edu.kh.project.board.model.mapper.CommentMapper">
+<mapper namespace="edu.kh.project.board.model.mapper.BoardMapper">
 	
 	<!-- 댓글목록조회 -->
 	<select id="select">
@@ -54,7 +54,15 @@
 		WHERE COMMENT_NO = #{commentNo}
 	</update>
 	
-	
+	<!-- DB 이미지 파일명 목록 조회 -->
+	<select id="selectDbImageList">
+	SELECT CAST(IMG_RENAME AS VARCHAR2(300)) "rename"
+	FROM BOARD_IMG
+	UNION
+	SELECT SUBSTR(PROFILE_IMG, INSTR(PROFILE_IMG, '/', -1) + 1) "rename"
+	FROM "MEMBER"
+	WHERE PROFILE_IMG IS NOT NULL
+	</select>
 	
 	
 	
