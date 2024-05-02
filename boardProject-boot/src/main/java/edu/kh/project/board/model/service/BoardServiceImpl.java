@@ -124,7 +124,12 @@ public class BoardServiceImpl implements BoardService{
 				
 				// 5. 결과 반환
 				return map;
-		return null;
+	}
+
+	@Override
+	public List<String> selectDbImageList() {
+		
+		return mapper.selectDbImageList();
 	}
 	
 	

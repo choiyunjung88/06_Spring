@@ -32,4 +32,6 @@ public interface BoardService {
 
 	Map<String, Object> searchList(int boardCode, int cp);
 
+	List<String> selectDbImageList();
+
 }
